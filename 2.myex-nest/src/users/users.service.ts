@@ -15,7 +15,7 @@ export class UsersService {
     });
   }
 
-  async findOneBy(id: string) {
+  async findOneBy(id: string | number) {
     const numId = Number(id);
     if (isNaN(numId)) {
       throw new BadRequestException('Id must be a valid number');
@@ -45,4 +45,5 @@ export class UsersService {
     return this.userRepository.remove(user);
   }
 }
+
 

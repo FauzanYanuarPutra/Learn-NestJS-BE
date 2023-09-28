@@ -6,6 +6,7 @@ import { ItemsModule } from './items/items.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UserSchema } from './users/user.entity';
 import { ItemSchema } from './items/item.entity';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { ItemSchema } from './items/item.entity';
     }),
     UsersModule,
     ItemsModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

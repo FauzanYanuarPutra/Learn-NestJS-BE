@@ -1,5 +1,6 @@
 import { AfterInsert, AfterRemove, AfterUpdate, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
+
 @Entity('user')
 export class UserSchema {
   @PrimaryGeneratedColumn()
@@ -13,6 +14,14 @@ export class UserSchema {
 
   @Column()
   password: string;
+
+  // @BeforeInsert()
+  // async hashPassword() {
+  //   // const scrypt = promisify(_scrypt);
+  //   // const salt = randomBytes(8).toString('hex');
+  //   // const hash = (await scrypt(this.password, salt, 64)) as Buffer;
+  //   // this.password = salt + '.' + hash.toString('hex');
+  // }
 
   @AfterInsert()
   log() {
